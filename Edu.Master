@@ -1,0 +1,147 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Edu.master.cs" Inherits="WebApplication1.Edu" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nixie+One|Open+Sans" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <![endif]-->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet" type='text/css'>
+
+     <script>
+        $(document).ready(function () {
+            $(".clickIcon").click(function (evt) {
+                evt.stopImmediatePropagation();
+                $(".profileBar").slideToggle("slow");
+            });
+         
+        });
+    </script>
+    <style>
+         .button {
+            display: inline-block;
+            background-color: #e6a303;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 15px;
+            font-family: 'Roboto';
+            font-weight: 700;
+            padding: 10px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+    </style>
+
+
+</head>
+
+<body id="top">
+    <form id="form1" runat="server">
+    <div class="profileBar"style="width:100%; height:100px; display:none;">
+       
+        <div class="container">
+            <div class="col-sm-6" style="text-align:right; margin-top:40px">
+                 <asp:Label runat="server" ID="userName" ></asp:Label>
+             </div>
+            <div class="col-sm-6" style="margin-top:25px">
+                 <asp:Button runat="server"  Text="Log Out" OnClick="logout" class="button"/>
+             </div>
+        </div>
+       
+
+    </div>
+    <header>
+    <div class="parallax bg-1">
+        <div class="fixed">
+            <a href="home.aspx"><h1>EduCaterers</h1></a>
+            <a class="menu-btn hamburger" href="#"><img src="img/menu.png" alt="menu"></a>
+            <nav>
+                <div class="navbar">
+                    <ul>
+                        <li><a href="home.aspx" class="active">Home</a></li>
+                        <li><a href="universities.aspx">Universities</a></li>
+                        <li><a href="#">Prepare</a></li>
+                        <li><a href="myPortal.aspx">My Portal</a></li>
+                         <li runat="server" id="loginIcon1"></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <h1>EduCaterers</h1>
+        <a class="menu-btn hamburger" href="#"><img src="img/menu.png" alt="menu"></a>
+        <nav>
+            <div class="navbar">
+                <ul>
+                    <li><a href="home.aspx" class="active">Home</a></li>
+                    <li><a href="universities.aspx">Universities</a></li>
+                    <li><a href="#">Prepare</a></li>
+                    <li><a href="myPortal.aspx">My Portal</a></li>
+                     <li runat="server" id="loginIcon2"></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="menu">
+            <a href="#" class="menu-close"><img src="img/close.png" alt="close-menu"></a>
+            <ul style="list-style:none;text-align:left !important;">
+                <li><a href="home.aspx">Home</a></li>
+                <li><a href="universities.aspx">Universities</a></li>
+                <li><a href="#">Prepare</a></li>
+                <li><a href="myPortal.aspx">My Portal</a></li>
+                <li><a href="login.aspx">Login</a></li>
+            </ul>
+        </div>
+        <h2>Discover the best Universities.</h2>
+        <h3>University Starts Here.</h3>
+        <a href="#who-are-we">
+            <button class="button" style="vertical-align:middle"><span>WHO ARE WE? </span></button>
+        </a>
+    </div>
+</header>
+
+    
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+   
+    <footer>
+        <h1>EduCaterers</h1>
+        <ul>
+            <li><a href="home.aspx">Home</a></li>
+            <li><a href="universities.aspx">Universities</a></li>
+            <li><a href="#">Prepare</a></li>
+            <li><a href="myPortal.aspx">My Portal</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+        <p>EduCaterers 2017. All Rights Reserved.</p>
+    </footer>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+         </form>
+</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="js/menu.js"></script>
+</html>
